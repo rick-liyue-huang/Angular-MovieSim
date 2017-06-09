@@ -30,7 +30,7 @@
 		var page = parseInt($routeParams.page);
 		var start = (page - 1) * count;
 
-
+		$scope.loading = true;
 		$scope.subjects = [];
 		$scope.message = '';
 		$scope.totalPages = 0;
@@ -38,7 +38,11 @@
 		$scope.totalCount = 0;
 		$scope.currentPage = page;
 
-		httpService.jsonp('http://api.douban.com/v2/movie/' + $routeParams.category, {start: start, count: count}, function(res) {
+		httpService.jsonp('http://api.douban.com/v2/movie/' + $routeParams.category,
+
+			// $routeParams data source is from ?parameters
+			{start: start, count: count, q: $routeParams.q},
+			function(res) {
 			// console.log(res);
 
 			$scope.title = res.title;
@@ -46,7 +50,7 @@
 			console.log($scope.subjects);
 			$scope.totalCount = res.total;
 			$scope.totalPages = Math.ceil($scope.totalCount / count);
-
+			$scope.loading = false;
 			// in order to load the async data
 			$scope.$apply();
 

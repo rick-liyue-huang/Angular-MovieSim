@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>load js</title>
+	<script>
+	// encap the load.js simply
+		function $script(loads, callback) {
+
+			var scriptElement = document.createElement('script');
+			scriptElement.src = loads;
+			document.head.appendChild(scriptElement);
+
+			scriptElement.addEventListener('load', callback);
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

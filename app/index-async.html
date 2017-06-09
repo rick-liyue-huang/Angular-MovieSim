@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>async loading the modules</title>
+	<!-- load.js script.js both can help us to load .js files async -->
+	<script src="bower_components/script.js/dist/script.js"></script>
+	<script src="bower_components/angular-loader/angular-loader.js"></script>
+	<script>
+
+ // show how to async load the libraries
+
+	// this is sync loading
+		// $script(['./bower_components/angular/angular.js',
+		// 	      './bower_components/jquery/dist/jquery.js',
+		// 	      './bower_components/angular-route/angular-route.js',
+		// 	      './movie-list/controller.js',
+		// 	      './components/http.js',
+		// 	      './components/auto-focus.js',
+		// 	      './app.js'
+		// 	      ], function() {
+		// 	console.log($);
+		// 	console.log(angular);
+		// 	angular.bootstrap(document, ['moviecat']);
+		// });
+
+		// through callback to async loading
+		// $script('./bower_components/angular/angular.js', function() {
+		// 	$script('./bower_components/angular-route/angular-route.js', function() {
+		// 		$script('./movie-list/controller.js', function() {
+		// 			.........
+		// 		});
+		// 	});
+		// });
+
+		// angular-loader can async load libraries, and control the dependency orders
+		$script(['./bower_components/angular/angular.js',
+			      './bower_components/jquery/dist/jquery.js',
+			      './bower_components/angular-route/angular-route.js',
+			      './movie_list/controller.js',
+			      './components/http.js',
+			      './components/auto-focus.js',
+			      './app.js'
+			      ], function() {
+			console.log($);
+			console.log(angular);
+			angular.bootstrap(document, ['moviecat']);
+		});
+
+
+	</script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

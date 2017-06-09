@@ -22,7 +22,7 @@
 
 </div>
 
-<div ng-show="subjects.length" >
+<div ng-show="!loading" >
 	<nav aria-label="...">
 	  <ul class="pager">
 	    <li ng-class="{disabled: currentPage <= 1}"><a ng-click="goPage(currentPage - 1)">Previous</a></li>
@@ -30,15 +30,17 @@
 	  </ul>
 	</nav>
 
-	<p >Total <strong ng-bind="subjects.length"></strong> movies are showing in theaters</p>
-	<p>total pages are: {{totalPages}}</p>
+	<p>total are: {{totalCount}} movies，No.{{currentPage}}/{{totalPages}} page</p>
 
 </div>
 
-
-<div class="mask" ng-show="!subjects.length">
+<div class="mask" ng-show='loading...'>
 	<h3>Is loading....</h3>
 </div>
+
+
+
+
 
 
 

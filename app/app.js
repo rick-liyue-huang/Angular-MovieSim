@@ -13,7 +13,20 @@ angular.module('moviecat', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/in_theaters/1'});
+}]).
+
+controller('searchController', ['$scope', '$route', function($scope, $route) {
+	$scope.input = '';
+	$scope.search = function() {
+		console.log($scope.input);
+
+		$route.updateParams({category: 'search', q:$scope.input});
+
+	};
+
 }])
+
+
 /* if we use controller to deal with the focus on li, we will use the following codes...
 
 .controller('navController', ['$scope', '$location', function($scope, $location) {
