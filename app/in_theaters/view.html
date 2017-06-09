@@ -1,0 +1,53 @@
+<h1 class="page-header">In_theaters</h1>
+
+<h2 ng-if="message">{{message}}</h2>
+
+<div class="list-group">
+  <a ng-repeat="item in subjects" href="#" class="list-group-item">
+  	<span class="badge">{{item.rating.average}}</span>
+    <div class="media">
+	  <div class="media-left">
+	    <img class="media-object" ng-src="{{item.images.small}}" alt="{{item.original_title}}">
+	  </div>
+	  <div class="media-body">
+	    <h2 class="media-heading">{{item.original_title}}</h2>
+	    <p>Directors: <strong ng-repeat="d in item.directors">{{d.name + ($last?'':'  ')}}</strong></p>
+	    <p>Casts: <strong ng-repeat="a in item.casts">{{a.name}}{{$last?'':'  '}}</strong></p>
+	    <p>Type: <strong>{{item.genres.join('.')}}</strong></p>
+	    <p>Show Time: <strong>{{item.year}}</strong></p>
+	    <p></p>
+	  </div>
+	</div>
+  </a>
+
+</div>
+
+<p ng-show="subjects.length">Total <strong ng-bind="subjects.length"></strong> movies are showing in theaters</p>
+<p ng-show="subjects.length">total pages are: {{totalPages}}</p>
+
+<div class="mask" ng-show="!subjects.length">
+	<h3>Is loading....</h3>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

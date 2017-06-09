@@ -1,0 +1,66 @@
+<h1 class="page-header" ng-bind="title"></h1>
+
+<h2 ng-if="message">{{message}}</h2>
+
+<div class="list-group">
+  <a ng-repeat="item in subjects" href="#" class="list-group-item">
+  	<span class="badge">{{item.rating.average}}</span>
+    <div class="media">
+	  <div class="media-left">
+	    <img class="media-object" ng-src="{{item.images.small}}" alt="{{item.original_title}}">
+	  </div>
+	  <div class="media-body">
+	    <h2 class="media-heading">{{item.original_title}}</h2>
+	    <p>Directors: <strong ng-repeat="d in item.directors">{{d.name + ($last?'':'  ')}}</strong></p>
+	    <p>Casts: <strong ng-repeat="a in item.casts">{{a.name}}{{$last?'':'  '}}</strong></p>
+	    <p>Type: <strong>{{item.genres.join('.')}}</strong></p>
+	    <p>Show Time: <strong>{{item.year}}</strong></p>
+	    <p></p>
+	  </div>
+	</div>
+  </a>
+
+</div>
+
+<div ng-show="subjects.length" >
+	<nav aria-label="...">
+	  <ul class="pager">
+	    <li ng-class="{disabled: currentPage <= 1}"><a ng-click="goPage(currentPage - 1)">Previous</a></li>
+	    <li ng-class="{disabled: currentPage >= totalPages}"><a ng-click="goPage(currentPage + 1)">Next</a></li>
+	  </ul>
+	</nav>
+
+	<p >Total <strong ng-bind="subjects.length"></strong> movies are showing in theaters</p>
+	<p>total pages are: {{totalPages}}</p>
+
+</div>
+
+
+<div class="mask" ng-show="!subjects.length">
+	<h3>Is loading....</h3>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
