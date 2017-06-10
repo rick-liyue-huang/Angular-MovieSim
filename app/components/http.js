@@ -11,6 +11,13 @@
 
 		this.jsonp = function(url, data, callback) {
 
+			/*
+			if (typeof data === 'function') {
+				callback = data;
+			}
+
+			*/
+
 			var queryString = url.indexOf('?') == -1 ? '?': '&';
 			for (var key in data) {
 				queryString += (key + '=' + data[key] + '&');

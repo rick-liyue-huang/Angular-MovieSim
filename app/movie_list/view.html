@@ -3,7 +3,7 @@
 <h2 ng-if="message">{{message}}</h2>
 
 <div class="list-group">
-  <a ng-repeat="item in subjects" href="#" class="list-group-item">
+  <a ng-repeat="item in subjects" href="#/detail/{{item.id}}" class="list-group-item">
   	<span class="badge">{{item.rating.average}}</span>
     <div class="media">
 	  <div class="media-left">
@@ -34,7 +34,7 @@
 
 </div>
 
-<div class="mask" ng-show='loading...'>
+<div class="mask" ng-show='loading'>
 	<h3>Is loading....</h3>
 </div>
 

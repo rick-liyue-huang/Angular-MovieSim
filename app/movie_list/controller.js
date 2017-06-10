@@ -19,14 +19,17 @@
 		'$routeParams',
 		'$route',
 		'httpService',
-		function($scope, $routeParams, $route, httpService) {
+		'appConfig',
+		function($scope, $routeParams, $route, httpService, appConfig) {
 
 
 		// divide to data and actions
 		// and also match the 'webapi.json' file http://api.douban.com/v2/movie/coming_soon?count=3&start=5
 
 		// $scope.subjects = data;
-		var count = 10;
+		console.log(appConfig);
+
+		var count = appConfig.pageSize;
 		var page = parseInt($routeParams.page);
 		var start = (page - 1) * count;
 
@@ -38,7 +41,7 @@
 		$scope.totalCount = 0;
 		$scope.currentPage = page;
 
-		httpService.jsonp('http://api.douban.com/v2/movie/' + $routeParams.category,
+		httpService.jsonp(appConfig.listApiAddress + $routeParams.category,
 
 			// $routeParams data source is from ?parameters
 			{start: start, count: count, q: $routeParams.q},
