@@ -22,3 +22,5 @@ Note that:
 - We also can run the project by start 'sublimeserver' plugin in sublime.
 
 
+- We can add the plugin of "no referer image" to explore the pictures in chrome browsers
+
