@@ -5,7 +5,7 @@ Here I create a project used to show the realtime movie list, including the movi
 
 Note that: 
 
-- In the 'package.json' file, I config the "npm run start" or "npm start" to install some packages in 'node_modules' and 'bower_components'.
+- In the 'package.json' file, I config the `npm run start` or `npm start` to install some packages in 'node_modules' and 'bower_components'.
 
 - '.gitignore' used to ignore the packages when upload to github.
 
@@ -17,7 +17,7 @@ Note that:
 
 - to show project, please firstly run 'npm start' in terminal or cmd. 
 
-- If run the 'npm start' in terminal or cmd the address should be 'http://localhost:8888', if it is 'http://localhost//localhost:8888', please change it.
+- If run the `npm start` in terminal or cmd the address should be 'http://localhost:8888', if it is 'http://localhost//localhost:8888', please change it.
 
 - We also can run the project by start 'sublimeserver' plugin in sublime.
 
